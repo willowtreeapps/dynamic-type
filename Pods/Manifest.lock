@@ -1,0 +1,26 @@
+PODS:
+  - FBSnapshotTestCase (2.1.1):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.1)
+  - FBSnapshotTestCase/Core (2.1.1)
+  - FBSnapshotTestCase/SwiftSupport (2.1.1):
+    - FBSnapshotTestCase/Core
+
+DEPENDENCIES:
+  - FBSnapshotTestCase (from `git@github.com:willowtreeapps/ios-snapshot-test-case.git`, branch `feature/swift-3`)
+
+EXTERNAL SOURCES:
+  FBSnapshotTestCase:
+    :branch: feature/swift-3
+    :git: git@github.com:willowtreeapps/ios-snapshot-test-case.git
+
+CHECKOUT OPTIONS:
+  FBSnapshotTestCase:
+    :commit: 6eeaf1f04a02f335a4c0dfcd487c5411187a8ef0
+    :git: git@github.com:willowtreeapps/ios-snapshot-test-case.git
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: 432afd8d059ccef7f207225894840a03fbcf7474
+
+PODFILE CHECKSUM: 3ad23a80dc039f758f284c75acc3ce90941286e4
+
+COCOAPODS: 1.0.1
