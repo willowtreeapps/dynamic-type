@@ -126,19 +126,19 @@ let DynamicTypeSizeCategories: [UIContentSizeCategory] = [
 extension UIContentSizeCategory: CustomStringConvertible {
     public var description: String {
         switch self {
-        case UIContentSizeCategory.extraSmall:                        return "extraSmall"
-        case UIContentSizeCategory.small:                             return "small"
-        case UIContentSizeCategory.medium:                            return "medium"
-        case UIContentSizeCategory.large:                             return "large"
-        case UIContentSizeCategory.extraLarge:                        return "extraLarge"
-        case UIContentSizeCategory.extraExtraLarge:                   return "extraExtraLarge"
-        case UIContentSizeCategory.extraExtraExtraLarge:              return "extraExtraExtraLarge"
-        case UIContentSizeCategory.accessibilityMedium:               return "accessibilityMedium"
-        case UIContentSizeCategory.accessibilityLarge:                return "accessibilityLarge"
-        case UIContentSizeCategory.accessibilityExtraLarge:           return "accessibilityExtraLarge"
-        case UIContentSizeCategory.accessibilityExtraExtraLarge:      return "accessibilityExtraExtraLarge"
-        case UIContentSizeCategory.accessibilityExtraExtraExtraLarge: return "accessibilityExtraExtraExtraLarge"
-        default:                                                      return "unspecified"
+        case UIContentSizeCategory.extraSmall:                        return "00-extraSmall"
+        case UIContentSizeCategory.small:                             return "01-small"
+        case UIContentSizeCategory.medium:                            return "02-medium"
+        case UIContentSizeCategory.large:                             return "03-large-DEFAULT"
+        case UIContentSizeCategory.extraLarge:                        return "04-extraLarge"
+        case UIContentSizeCategory.extraExtraLarge:                   return "05-extraExtraLarge"
+        case UIContentSizeCategory.extraExtraExtraLarge:              return "06-extraExtraExtraLarge"
+        case UIContentSizeCategory.accessibilityMedium:               return "07-accessibilityMedium"
+        case UIContentSizeCategory.accessibilityLarge:                return "08-accessibilityLarge"
+        case UIContentSizeCategory.accessibilityExtraLarge:           return "09-accessibilityExtraLarge"
+        case UIContentSizeCategory.accessibilityExtraExtraLarge:      return "10-accessibilityExtraExtraLarge"
+        case UIContentSizeCategory.accessibilityExtraExtraExtraLarge: return "11-accessibilityExtraExtraExtraLarge"
+        default:                                                      return "12-unspecified"
         }
     }
 }
