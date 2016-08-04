@@ -28,6 +28,7 @@ class SnapshotTests: FBSnapshotTestCase {
 
     override func setUp() {
         super.setUp()
+        isDeviceAgnostic = true
         recordMode = false
     }
 
