@@ -145,139 +145,152 @@ extension UIContentSizeCategory: CustomStringConvertible {
 
 extension TextStyle {
     static func defaultFontMapping(style: TextStyle, sizeCategory: UIContentSizeCategory) -> UIFont {
+        let pointSize = defaultFontPointSize(style: style, sizeCategory: sizeCategory)
+
+        switch style {
+        case .headline:
+            return .boldSystemFont(ofSize: pointSize)
+        default:
+            return .systemFont(ofSize: pointSize)
+        }
+    }
+}
+
+extension TextStyle {
+    static func defaultFontPointSize(style: TextStyle, sizeCategory: UIContentSizeCategory) -> CGFloat {
         switch (style, sizeCategory) {
-        case (.title1, UIContentSizeCategory.extraSmall):                        return .systemFont(ofSize: 25)
-        case (.title1, UIContentSizeCategory.small):                             return .systemFont(ofSize: 26)
-        case (.title1, UIContentSizeCategory.medium):                            return .systemFont(ofSize: 27)
-        case (.title1, UIContentSizeCategory.large):                             return .systemFont(ofSize: 28)
-        case (.title1, UIContentSizeCategory.extraLarge):                        return .systemFont(ofSize: 30)
-        case (.title1, UIContentSizeCategory.extraExtraLarge):                   return .systemFont(ofSize: 32)
+        case (.title1, UIContentSizeCategory.extraSmall):                        return 25
+        case (.title1, UIContentSizeCategory.small):                             return 26
+        case (.title1, UIContentSizeCategory.medium):                            return 27
+        case (.title1, UIContentSizeCategory.large):                             return 28
+        case (.title1, UIContentSizeCategory.extraLarge):                        return 30
+        case (.title1, UIContentSizeCategory.extraExtraLarge):                   return 32
         case (.title1, UIContentSizeCategory.extraExtraExtraLarge):              fallthrough
         case (.title1, UIContentSizeCategory.accessibilityMedium):               fallthrough
         case (.title1, UIContentSizeCategory.accessibilityLarge):                fallthrough
         case (.title1, UIContentSizeCategory.accessibilityExtraLarge):           fallthrough
         case (.title1, UIContentSizeCategory.accessibilityExtraExtraLarge):      fallthrough
-        case (.title1, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return .systemFont(ofSize: 34)
+        case (.title1, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return 34
 
-        case (.title2, UIContentSizeCategory.extraSmall):                        return .systemFont(ofSize: 19)
-        case (.title2, UIContentSizeCategory.small):                             return .systemFont(ofSize: 20)
-        case (.title2, UIContentSizeCategory.medium):                            return .systemFont(ofSize: 21)
-        case (.title2, UIContentSizeCategory.large):                             return .systemFont(ofSize: 22)
-        case (.title2, UIContentSizeCategory.extraLarge):                        return .systemFont(ofSize: 24)
-        case (.title2, UIContentSizeCategory.extraExtraLarge):                   return .systemFont(ofSize: 26)
+        case (.title2, UIContentSizeCategory.extraSmall):                        return 19
+        case (.title2, UIContentSizeCategory.small):                             return 20
+        case (.title2, UIContentSizeCategory.medium):                            return 21
+        case (.title2, UIContentSizeCategory.large):                             return 22
+        case (.title2, UIContentSizeCategory.extraLarge):                        return 24
+        case (.title2, UIContentSizeCategory.extraExtraLarge):                   return 26
         case (.title2, UIContentSizeCategory.extraExtraExtraLarge):              fallthrough
         case (.title2, UIContentSizeCategory.accessibilityMedium):               fallthrough
         case (.title2, UIContentSizeCategory.accessibilityLarge):                fallthrough
         case (.title2, UIContentSizeCategory.accessibilityExtraLarge):           fallthrough
         case (.title2, UIContentSizeCategory.accessibilityExtraExtraLarge):      fallthrough
-        case (.title2, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return .systemFont(ofSize: 28)
+        case (.title2, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return 28
 
-        case (.title3, UIContentSizeCategory.extraSmall):                        return .systemFont(ofSize: 17)
-        case (.title3, UIContentSizeCategory.small):                             return .systemFont(ofSize: 18)
-        case (.title3, UIContentSizeCategory.medium):                            return .systemFont(ofSize: 19)
-        case (.title3, UIContentSizeCategory.large):                             return .systemFont(ofSize: 20)
-        case (.title3, UIContentSizeCategory.extraLarge):                        return .systemFont(ofSize: 22)
-        case (.title3, UIContentSizeCategory.extraExtraLarge):                   return .systemFont(ofSize: 24)
+        case (.title3, UIContentSizeCategory.extraSmall):                        return 17
+        case (.title3, UIContentSizeCategory.small):                             return 18
+        case (.title3, UIContentSizeCategory.medium):                            return 19
+        case (.title3, UIContentSizeCategory.large):                             return 20
+        case (.title3, UIContentSizeCategory.extraLarge):                        return 22
+        case (.title3, UIContentSizeCategory.extraExtraLarge):                   return 24
         case (.title3, UIContentSizeCategory.extraExtraExtraLarge):              fallthrough
         case (.title3, UIContentSizeCategory.accessibilityMedium):               fallthrough
         case (.title3, UIContentSizeCategory.accessibilityLarge):                fallthrough
         case (.title3, UIContentSizeCategory.accessibilityExtraLarge):           fallthrough
         case (.title3, UIContentSizeCategory.accessibilityExtraExtraLarge):      fallthrough
-        case (.title3, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return .systemFont(ofSize: 26)
+        case (.title3, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return 26
 
-        case (.headline, UIContentSizeCategory.extraSmall):                        return .boldSystemFont(ofSize: 14)
-        case (.headline, UIContentSizeCategory.small):                             return .boldSystemFont(ofSize: 15)
-        case (.headline, UIContentSizeCategory.medium):                            return .boldSystemFont(ofSize: 16)
-        case (.headline, UIContentSizeCategory.large):                             return .boldSystemFont(ofSize: 17)
-        case (.headline, UIContentSizeCategory.extraLarge):                        return .boldSystemFont(ofSize: 19)
-        case (.headline, UIContentSizeCategory.extraExtraLarge):                   return .boldSystemFont(ofSize: 21)
+        case (.headline, UIContentSizeCategory.extraSmall):                        return 14
+        case (.headline, UIContentSizeCategory.small):                             return 15
+        case (.headline, UIContentSizeCategory.medium):                            return 16
+        case (.headline, UIContentSizeCategory.large):                             return 17
+        case (.headline, UIContentSizeCategory.extraLarge):                        return 19
+        case (.headline, UIContentSizeCategory.extraExtraLarge):                   return 21
         case (.headline, UIContentSizeCategory.extraExtraExtraLarge):              fallthrough
         case (.headline, UIContentSizeCategory.accessibilityMedium):               fallthrough
         case (.headline, UIContentSizeCategory.accessibilityLarge):                fallthrough
         case (.headline, UIContentSizeCategory.accessibilityExtraLarge):           fallthrough
         case (.headline, UIContentSizeCategory.accessibilityExtraExtraLarge):      fallthrough
-        case (.headline, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return .boldSystemFont(ofSize: 23)
+        case (.headline, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return 23
 
-        case (.subheadline, UIContentSizeCategory.extraSmall):                        return .systemFont(ofSize: 12)
-        case (.subheadline, UIContentSizeCategory.small):                             return .systemFont(ofSize: 13)
-        case (.subheadline, UIContentSizeCategory.medium):                            return .systemFont(ofSize: 14)
-        case (.subheadline, UIContentSizeCategory.large):                             return .systemFont(ofSize: 15)
-        case (.subheadline, UIContentSizeCategory.extraLarge):                        return .systemFont(ofSize: 17)
-        case (.subheadline, UIContentSizeCategory.extraExtraLarge):                   return .systemFont(ofSize: 19)
+        case (.subheadline, UIContentSizeCategory.extraSmall):                        return 12
+        case (.subheadline, UIContentSizeCategory.small):                             return 13
+        case (.subheadline, UIContentSizeCategory.medium):                            return 14
+        case (.subheadline, UIContentSizeCategory.large):                             return 15
+        case (.subheadline, UIContentSizeCategory.extraLarge):                        return 17
+        case (.subheadline, UIContentSizeCategory.extraExtraLarge):                   return 19
         case (.subheadline, UIContentSizeCategory.extraExtraExtraLarge):              fallthrough
         case (.subheadline, UIContentSizeCategory.accessibilityMedium):               fallthrough
         case (.subheadline, UIContentSizeCategory.accessibilityLarge):                fallthrough
         case (.subheadline, UIContentSizeCategory.accessibilityExtraLarge):           fallthrough
         case (.subheadline, UIContentSizeCategory.accessibilityExtraExtraLarge):      fallthrough
-        case (.subheadline, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return .systemFont(ofSize: 21)
+        case (.subheadline, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return 21
 
-        case (.body, UIContentSizeCategory.extraSmall):                        return .systemFont(ofSize: 14)
-        case (.body, UIContentSizeCategory.small):                             return .systemFont(ofSize: 15)
-        case (.body, UIContentSizeCategory.medium):                            return .systemFont(ofSize: 16)
-        case (.body, UIContentSizeCategory.large):                             return .systemFont(ofSize: 17)
-        case (.body, UIContentSizeCategory.extraLarge):                        return .systemFont(ofSize: 19)
-        case (.body, UIContentSizeCategory.extraExtraLarge):                   return .systemFont(ofSize: 21)
-        case (.body, UIContentSizeCategory.extraExtraExtraLarge):              return .systemFont(ofSize: 23)
-        case (.body, UIContentSizeCategory.accessibilityMedium):               return .systemFont(ofSize: 28)
-        case (.body, UIContentSizeCategory.accessibilityLarge):                return .systemFont(ofSize: 33)
-        case (.body, UIContentSizeCategory.accessibilityExtraLarge):           return .systemFont(ofSize: 40)
-        case (.body, UIContentSizeCategory.accessibilityExtraExtraLarge):      return .systemFont(ofSize: 47)
-        case (.body, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return .systemFont(ofSize: 53)
+        case (.body, UIContentSizeCategory.extraSmall):                        return 14
+        case (.body, UIContentSizeCategory.small):                             return 15
+        case (.body, UIContentSizeCategory.medium):                            return 16
+        case (.body, UIContentSizeCategory.large):                             return 17
+        case (.body, UIContentSizeCategory.extraLarge):                        return 19
+        case (.body, UIContentSizeCategory.extraExtraLarge):                   return 21
+        case (.body, UIContentSizeCategory.extraExtraExtraLarge):              return 23
+        case (.body, UIContentSizeCategory.accessibilityMedium):               return 28
+        case (.body, UIContentSizeCategory.accessibilityLarge):                return 33
+        case (.body, UIContentSizeCategory.accessibilityExtraLarge):           return 40
+        case (.body, UIContentSizeCategory.accessibilityExtraExtraLarge):      return 47
+        case (.body, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return 53
 
-        case (.callout, UIContentSizeCategory.extraSmall):                        return .systemFont(ofSize: 13)
-        case (.callout, UIContentSizeCategory.small):                             return .systemFont(ofSize: 14)
-        case (.callout, UIContentSizeCategory.medium):                            return .systemFont(ofSize: 15)
-        case (.callout, UIContentSizeCategory.large):                             return .systemFont(ofSize: 16)
-        case (.callout, UIContentSizeCategory.extraLarge):                        return .systemFont(ofSize: 18)
-        case (.callout, UIContentSizeCategory.extraExtraLarge):                   return .systemFont(ofSize: 20)
+        case (.callout, UIContentSizeCategory.extraSmall):                        return 13
+        case (.callout, UIContentSizeCategory.small):                             return 14
+        case (.callout, UIContentSizeCategory.medium):                            return 15
+        case (.callout, UIContentSizeCategory.large):                             return 16
+        case (.callout, UIContentSizeCategory.extraLarge):                        return 18
+        case (.callout, UIContentSizeCategory.extraExtraLarge):                   return 20
         case (.callout, UIContentSizeCategory.extraExtraExtraLarge):              fallthrough
         case (.callout, UIContentSizeCategory.accessibilityMedium):               fallthrough
         case (.callout, UIContentSizeCategory.accessibilityLarge):                fallthrough
         case (.callout, UIContentSizeCategory.accessibilityExtraLarge):           fallthrough
         case (.callout, UIContentSizeCategory.accessibilityExtraExtraLarge):      fallthrough
-        case (.callout, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return .systemFont(ofSize: 22)
+        case (.callout, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return 22
 
-        case (.footnote, UIContentSizeCategory.extraSmall):                        return .systemFont(ofSize: 12)
-        case (.footnote, UIContentSizeCategory.small):                             return .systemFont(ofSize: 12)
-        case (.footnote, UIContentSizeCategory.medium):                            return .systemFont(ofSize: 12)
-        case (.footnote, UIContentSizeCategory.large):                             return .systemFont(ofSize: 13)
-        case (.footnote, UIContentSizeCategory.extraLarge):                        return .systemFont(ofSize: 15)
-        case (.footnote, UIContentSizeCategory.extraExtraLarge):                   return .systemFont(ofSize: 17)
+        case (.footnote, UIContentSizeCategory.extraSmall):                        return 12
+        case (.footnote, UIContentSizeCategory.small):                             return 12
+        case (.footnote, UIContentSizeCategory.medium):                            return 12
+        case (.footnote, UIContentSizeCategory.large):                             return 13
+        case (.footnote, UIContentSizeCategory.extraLarge):                        return 15
+        case (.footnote, UIContentSizeCategory.extraExtraLarge):                   return 17
         case (.footnote, UIContentSizeCategory.extraExtraExtraLarge):              fallthrough
         case (.footnote, UIContentSizeCategory.accessibilityMedium):               fallthrough
         case (.footnote, UIContentSizeCategory.accessibilityLarge):                fallthrough
         case (.footnote, UIContentSizeCategory.accessibilityExtraLarge):           fallthrough
         case (.footnote, UIContentSizeCategory.accessibilityExtraExtraLarge):      fallthrough
-        case (.footnote, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return .systemFont(ofSize: 19)
+        case (.footnote, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return 19
 
-        case (.caption1, UIContentSizeCategory.extraSmall):                        return .systemFont(ofSize: 11)
-        case (.caption1, UIContentSizeCategory.small):                             return .systemFont(ofSize: 11)
-        case (.caption1, UIContentSizeCategory.medium):                            return .systemFont(ofSize: 11)
-        case (.caption1, UIContentSizeCategory.large):                             return .systemFont(ofSize: 12)
-        case (.caption1, UIContentSizeCategory.extraLarge):                        return .systemFont(ofSize: 14)
-        case (.caption1, UIContentSizeCategory.extraExtraLarge):                   return .systemFont(ofSize: 16)
+        case (.caption1, UIContentSizeCategory.extraSmall):                        return 11
+        case (.caption1, UIContentSizeCategory.small):                             return 11
+        case (.caption1, UIContentSizeCategory.medium):                            return 11
+        case (.caption1, UIContentSizeCategory.large):                             return 12
+        case (.caption1, UIContentSizeCategory.extraLarge):                        return 14
+        case (.caption1, UIContentSizeCategory.extraExtraLarge):                   return 16
         case (.caption1, UIContentSizeCategory.extraExtraExtraLarge):              fallthrough
         case (.caption1, UIContentSizeCategory.accessibilityMedium):               fallthrough
         case (.caption1, UIContentSizeCategory.accessibilityLarge):                fallthrough
         case (.caption1, UIContentSizeCategory.accessibilityExtraLarge):           fallthrough
         case (.caption1, UIContentSizeCategory.accessibilityExtraExtraLarge):      fallthrough
-        case (.caption1, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return .systemFont(ofSize: 18)
+        case (.caption1, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return 18
 
-        case (.caption2, UIContentSizeCategory.extraSmall):                        return .systemFont(ofSize: 11)
-        case (.caption2, UIContentSizeCategory.small):                             return .systemFont(ofSize: 11)
-        case (.caption2, UIContentSizeCategory.medium):                            return .systemFont(ofSize: 11)
-        case (.caption2, UIContentSizeCategory.large):                             return .systemFont(ofSize: 11)
-        case (.caption2, UIContentSizeCategory.extraLarge):                        return .systemFont(ofSize: 13)
-        case (.caption2, UIContentSizeCategory.extraExtraLarge):                   return .systemFont(ofSize: 15)
+        case (.caption2, UIContentSizeCategory.extraSmall):                        return 11
+        case (.caption2, UIContentSizeCategory.small):                             return 11
+        case (.caption2, UIContentSizeCategory.medium):                            return 11
+        case (.caption2, UIContentSizeCategory.large):                             return 11
+        case (.caption2, UIContentSizeCategory.extraLarge):                        return 13
+        case (.caption2, UIContentSizeCategory.extraExtraLarge):                   return 15
         case (.caption2, UIContentSizeCategory.extraExtraExtraLarge):              fallthrough
         case (.caption2, UIContentSizeCategory.accessibilityMedium):               fallthrough
         case (.caption2, UIContentSizeCategory.accessibilityLarge):                fallthrough
         case (.caption2, UIContentSizeCategory.accessibilityExtraLarge):           fallthrough
         case (.caption2, UIContentSizeCategory.accessibilityExtraExtraLarge):      fallthrough
-        case (.caption2, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return .systemFont(ofSize: 17)
+        case (.caption2, UIContentSizeCategory.accessibilityExtraExtraExtraLarge): return 17
             
         default:
-            return .preferredFont(forTextStyle: style.osTextStyle)
+            return UIFontDescriptor.preferredFontDescriptor(withTextStyle: style.osTextStyle).pointSize
         }
     }
 }
