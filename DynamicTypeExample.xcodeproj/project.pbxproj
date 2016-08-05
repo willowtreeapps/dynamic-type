@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		7EA2FFA66791FBD4278E1B54 /* Pods_DynamicTypeExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFEA32415EA8D91C4F82F28 /* Pods_DynamicTypeExampleTests.framework */; };
 		D931EC331D53BB5F007E8742 /* DynamicType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D931EC321D53BB5F007E8742 /* DynamicType.swift */; };
-		D96BB4991D53C3A30021BD2E /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96BB4981D53C3A30021BD2E /* SnapshotTests.swift */; };
+		D96BB4A11D54DD540021BD2E /* SnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96BB4981D53C3A30021BD2E /* SnapshotTests.swift */; };
+		D96BB4A31D54DD540021BD2E /* Pods_DynamicTypeExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DFEA32415EA8D91C4F82F28 /* Pods_DynamicTypeExampleTests.framework */; };
+		D96BB4AE1D54DE6B0021BD2E /* DynamicTypeExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D96BB4AD1D54DE6B0021BD2E /* DynamicTypeExampleTests.swift */; };
 		D987CFBB1D53B33A0098C261 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D987CFBA1D53B33A0098C261 /* AppDelegate.swift */; };
 		D987CFBD1D53B33A0098C261 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D987CFBC1D53B33A0098C261 /* ViewController.swift */; };
 		D987CFC01D53B33A0098C261 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D987CFBE1D53B33A0098C261 /* Main.storyboard */; };
@@ -19,6 +21,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		D96BB49E1D54DD540021BD2E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D987CFAF1D53B33A0098C261 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D987CFB61D53B33A0098C261;
+			remoteInfo = DynamicTypeExample;
+		};
 		D987CFCC1D53B33A0098C261 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D987CFAF1D53B33A0098C261 /* Project object */;
@@ -41,6 +50,9 @@
 		3DFEA32415EA8D91C4F82F28 /* Pods_DynamicTypeExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DynamicTypeExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D931EC321D53BB5F007E8742 /* DynamicType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicType.swift; sourceTree = "<group>"; };
 		D96BB4981D53C3A30021BD2E /* SnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SnapshotTests.swift; sourceTree = "<group>"; };
+		D96BB4AA1D54DD540021BD2E /* DynamicTypeExampleSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DynamicTypeExampleSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D96BB4AB1D54DD540021BD2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D96BB4AD1D54DE6B0021BD2E /* DynamicTypeExampleTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicTypeExampleTests.swift; sourceTree = "<group>"; };
 		D987CFB71D53B33A0098C261 /* DynamicTypeExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicTypeExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D987CFBA1D53B33A0098C261 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D987CFBC1D53B33A0098C261 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +68,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D96BB4A21D54DD540021BD2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D96BB4A31D54DD540021BD2E /* Pods_DynamicTypeExampleTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D987CFB41D53B33A0098C261 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -98,11 +118,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D96BB4AC1D54DDEA0021BD2E /* DynamicTypeExampleSnapshotTests */ = {
+			isa = PBXGroup;
+			children = (
+				D96BB4AB1D54DD540021BD2E /* Info.plist */,
+				D96BB4981D53C3A30021BD2E /* SnapshotTests.swift */,
+			);
+			path = DynamicTypeExampleSnapshotTests;
+			sourceTree = "<group>";
+		};
 		D987CFAE1D53B33A0098C261 = {
 			isa = PBXGroup;
 			children = (
 				D987CFB91D53B33A0098C261 /* DynamicTypeExample */,
 				D987CFCE1D53B33A0098C261 /* DynamicTypeExampleTests */,
+				D96BB4AC1D54DDEA0021BD2E /* DynamicTypeExampleSnapshotTests */,
 				D987CFD91D53B33A0098C261 /* DynamicTypeExampleUITests */,
 				D987CFB81D53B33A0098C261 /* Products */,
 				A2FA28609D4BA1EE342ED40B /* Pods */,
@@ -116,6 +146,7 @@
 				D987CFB71D53B33A0098C261 /* DynamicTypeExample.app */,
 				D987CFCB1D53B33A0098C261 /* DynamicTypeExampleTests.xctest */,
 				D987CFD61D53B33A0098C261 /* DynamicTypeExampleUITests.xctest */,
+				D96BB4AA1D54DD540021BD2E /* DynamicTypeExampleSnapshotTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -137,8 +168,8 @@
 		D987CFCE1D53B33A0098C261 /* DynamicTypeExampleTests */ = {
 			isa = PBXGroup;
 			children = (
-				D96BB4981D53C3A30021BD2E /* SnapshotTests.swift */,
 				D987CFD11D53B33A0098C261 /* Info.plist */,
+				D96BB4AD1D54DE6B0021BD2E /* DynamicTypeExampleTests.swift */,
 			);
 			path = DynamicTypeExampleTests;
 			sourceTree = "<group>";
@@ -155,6 +186,27 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D96BB49C1D54DD540021BD2E /* DynamicTypeExampleSnapshotTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D96BB4A71D54DD540021BD2E /* Build configuration list for PBXNativeTarget "DynamicTypeExampleSnapshotTests" */;
+			buildPhases = (
+				D96BB49F1D54DD540021BD2E /* [CP] Check Pods Manifest.lock */,
+				D96BB4A01D54DD540021BD2E /* Sources */,
+				D96BB4A21D54DD540021BD2E /* Frameworks */,
+				D96BB4A41D54DD540021BD2E /* Resources */,
+				D96BB4A51D54DD540021BD2E /* [CP] Embed Pods Frameworks */,
+				D96BB4A61D54DD540021BD2E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D96BB49D1D54DD540021BD2E /* PBXTargetDependency */,
+			);
+			name = DynamicTypeExampleSnapshotTests;
+			productName = DynamicTypeExampleTests;
+			productReference = D96BB4AA1D54DD540021BD2E /* DynamicTypeExampleSnapshotTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D987CFB61D53B33A0098C261 /* DynamicTypeExample */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D987CFDF1D53B33A0098C261 /* Build configuration list for PBXNativeTarget "DynamicTypeExample" */;
@@ -221,6 +273,9 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = WillowTree;
 				TargetAttributes = {
+					D96BB49C1D54DD540021BD2E = {
+						DevelopmentTeam = 7UMFPW78PV;
+					};
 					D987CFB61D53B33A0098C261 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7UMFPW78PV;
@@ -229,6 +284,7 @@
 					D987CFCA1D53B33A0098C261 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7UMFPW78PV;
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 						TestTargetID = D987CFB61D53B33A0098C261;
 					};
@@ -256,11 +312,19 @@
 				D987CFB61D53B33A0098C261 /* DynamicTypeExample */,
 				D987CFCA1D53B33A0098C261 /* DynamicTypeExampleTests */,
 				D987CFD51D53B33A0098C261 /* DynamicTypeExampleUITests */,
+				D96BB49C1D54DD540021BD2E /* DynamicTypeExampleSnapshotTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D96BB4A41D54DD540021BD2E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D987CFB51D53B33A0098C261 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -318,6 +382,51 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DynamicTypeExampleTests/Pods-DynamicTypeExampleTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D96BB49F1D54DD540021BD2E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D96BB4A51D54DD540021BD2E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DynamicTypeExampleTests/Pods-DynamicTypeExampleTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D96BB4A61D54DD540021BD2E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-DynamicTypeExampleTests/Pods-DynamicTypeExampleTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DDE82CD39530A90F01D044AC /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -336,6 +445,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D96BB4A01D54DD540021BD2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D96BB4A11D54DD540021BD2E /* SnapshotTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D987CFB31D53B33A0098C261 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,7 +467,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D96BB4991D53C3A30021BD2E /* SnapshotTests.swift in Sources */,
+				D96BB4AE1D54DE6B0021BD2E /* DynamicTypeExampleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +482,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		D96BB49D1D54DD540021BD2E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D987CFB61D53B33A0098C261 /* DynamicTypeExample */;
+			targetProxy = D96BB49E1D54DD540021BD2E /* PBXContainerItemProxy */;
+		};
 		D987CFCD1D53B33A0098C261 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = D987CFB61D53B33A0098C261 /* DynamicTypeExample */;
@@ -397,6 +519,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		D96BB4A81D54DD540021BD2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3A1E6A1D22AA59FA1BF87948 /* Pods-DynamicTypeExampleTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7UMFPW78PV;
+				INFOPLIST_FILE = DynamicTypeExampleSnapshotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willowtree.DynamicTypeExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicTypeExample.app/DynamicTypeExample";
+			};
+			name = Debug;
+		};
+		D96BB4A91D54DD540021BD2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 364DCBEACDFA6696457F607F /* Pods-DynamicTypeExampleTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 7UMFPW78PV;
+				INFOPLIST_FILE = DynamicTypeExampleSnapshotTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.willowtree.DynamicTypeExampleTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicTypeExample.app/DynamicTypeExample";
+			};
+			name = Release;
+		};
 		D987CFDD1D53B33A0098C261 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -521,11 +673,13 @@
 			baseConfigurationReference = 3A1E6A1D22AA59FA1BF87948 /* Pods-DynamicTypeExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7UMFPW78PV;
 				INFOPLIST_FILE = DynamicTypeExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willowtree.DynamicTypeExampleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DynamicTypeExample.app/DynamicTypeExample";
 			};
@@ -536,6 +690,7 @@
 			baseConfigurationReference = 364DCBEACDFA6696457F607F /* Pods-DynamicTypeExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 7UMFPW78PV;
 				INFOPLIST_FILE = DynamicTypeExampleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -575,6 +730,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D96BB4A71D54DD540021BD2E /* Build configuration list for PBXNativeTarget "DynamicTypeExampleSnapshotTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D96BB4A81D54DD540021BD2E /* Debug */,
+				D96BB4A91D54DD540021BD2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D987CFB21D53B33A0098C261 /* Build configuration list for PBXProject "DynamicTypeExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
