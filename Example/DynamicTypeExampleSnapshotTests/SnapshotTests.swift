@@ -33,7 +33,7 @@ class SnapshotTests: FBSnapshotTestCase {
     }
 
     func testDynamicFonts() {
-        DynamicTypeSizeCategories.forEach { size in
+        sizeCategories.forEach { size in
             SnapshotTests.controller.updateFonts(preferredContentSize: size)
             FBSnapshotVerifyView(SnapshotTests.window, identifier: size.description)
         }

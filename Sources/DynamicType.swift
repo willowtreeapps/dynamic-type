@@ -8,7 +8,8 @@
 
 import UIKit
 
-final class FontMap<Style: Hashable> {
+/// FontMap will create and cache fonts for a given style and size category.
+public final class FontMap<Style: Hashable> {
     let creator: (style: Style, sizeCategory: UIContentSizeCategory) -> UIFont
     var cache: [Style: [UIContentSizeCategory:UIFont]] = [:]
 
@@ -28,6 +29,7 @@ final class FontMap<Style: Hashable> {
     }
 }
 
+/// TextStyle is a default style that represents the built in UIKit styles
 public enum TextStyle {
     case title1
     case title2
@@ -55,7 +57,8 @@ public enum TextStyle {
         }
     }
 
-    static let defaultFontMap = FontMap<TextStyle>(creator: TextStyle.defaultFontMapping)
+    /// A default font map for default styles
+    public static let defaultFontMap = FontMap<TextStyle>(creator: TextStyle.defaultFontMapping)
 }
 
 @objc protocol RespondsToDynamicFont {
@@ -104,11 +107,12 @@ extension UIViewController {
     }
 }
 
-private extension Selector {
+extension Selector {
     static let updateFonts = #selector(UIViewController.dynamicType_updateFonts(notification:))
 }
 
-let DynamicTypeSizeCategories: [UIContentSizeCategory] = [
+/// All size categories for easy iteration
+public let sizeCategories: [UIContentSizeCategory] = [
     .extraSmall,
     .small,
     .medium,
@@ -144,7 +148,8 @@ extension UIContentSizeCategory: CustomStringConvertible {
 }
 
 extension TextStyle {
-    static func defaultFontMapping(style: TextStyle, sizeCategory: UIContentSizeCategory) -> UIFont {
+    /// The iOS default font for a given style and size category.
+    public static func defaultFontMapping(style: TextStyle, sizeCategory: UIContentSizeCategory) -> UIFont {
         let pointSize = defaultFontPointSize(style: style, sizeCategory: sizeCategory)
 
         switch style {
@@ -157,7 +162,8 @@ extension TextStyle {
 }
 
 extension TextStyle {
-    static func defaultFontPointSize(style: TextStyle, sizeCategory: UIContentSizeCategory) -> CGFloat {
+    /// The iOS defaults for font sizes for a given style and size category.
+    public static func defaultFontPointSize(style: TextStyle, sizeCategory: UIContentSizeCategory) -> CGFloat {
         switch (style, sizeCategory) {
         case (.title1, UIContentSizeCategory.extraSmall):                        return 25
         case (.title1, UIContentSizeCategory.small):                             return 26
