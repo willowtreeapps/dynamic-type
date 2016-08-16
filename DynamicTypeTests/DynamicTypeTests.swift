@@ -41,11 +41,11 @@ class FontMapTests: XCTestCase {
 }
 
 class DefaultFontMapTests: XCTestCase {
-    let map = TextStyle.defaultFontMap
+    let map = UIFontTextStyle.defaultFontMap
 
     func testBody() {
         let font = map.font(style: .body, sizeCategory: .accessibilityExtraExtraLarge)
-        let pointSize = TextStyle.defaultFontPointSize(style: .body, sizeCategory: .accessibilityExtraExtraLarge)
+        let pointSize = UIFontTextStyle.body.defaultFontPointSize(sizeCategory: .accessibilityExtraExtraLarge)
         XCTAssertEqual(pointSize, font.pointSize)
 
         let defaultfont = UIFont.systemFont(ofSize: pointSize)
@@ -54,7 +54,7 @@ class DefaultFontMapTests: XCTestCase {
 
     func testBoldHeadline() {
         let font = map.font(style: .headline, sizeCategory: .medium)
-        let pointSize = TextStyle.defaultFontPointSize(style: .headline, sizeCategory: .medium)
+        let pointSize = UIFontTextStyle.headline.defaultFontPointSize(sizeCategory: .medium)
         XCTAssertEqual(pointSize, font.pointSize)
 
         let defaultfont = UIFont.boldSystemFont(ofSize: pointSize)
