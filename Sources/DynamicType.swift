@@ -17,7 +17,7 @@ public final class FontMap<Style: Hashable> {
         self.creator = creator
     }
 
-    func font(style: Style, sizeCategory: UIContentSizeCategory) -> UIFont {
+    public func font(style: Style, sizeCategory: UIContentSizeCategory) -> UIFont {
         if let font = cache[style]?[sizeCategory] {
             return font
         }
