@@ -34,7 +34,7 @@ extension UIFontTextStyle {
     public static let defaultFontMap = FontMap<UIFontTextStyle>(creator: defaultFontMapping)
 }
 
-@objc protocol RespondsToDynamicFont {
+@objc public protocol RespondsToDynamicFont {
     func updateFonts(preferredContentSize: UIContentSizeCategory)
 }
 
