@@ -13,7 +13,7 @@ public final class FontMap<Style: Hashable> {
     let creator: (_ style: Style, _ sizeCategory: UIContentSizeCategory) -> UIFont
     var cache: [Style: [UIContentSizeCategory:UIFont]] = [:]
 
-    init(creator: @escaping (_ style: Style, _ sizeCategory: UIContentSizeCategory) -> UIFont) {
+    public init(creator: @escaping (_ style: Style, _ sizeCategory: UIContentSizeCategory) -> UIFont) {
         self.creator = creator
     }
 
