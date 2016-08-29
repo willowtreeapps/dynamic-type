@@ -17,7 +17,7 @@ public final class FontMap<Style: Hashable> {
         self.creator = creator
     }
 
-    public func font(style: Style, sizeCategory: UIContentSizeCategory) -> UIFont {
+    public func font(style: Style, sizeCategory: UIContentSizeCategory = current()) -> UIFont {
         if let font = cache[style]?[sizeCategory] {
             return font
         }
@@ -121,12 +121,13 @@ extension UIContentSizeCategory: CustomStringConvertible {
 }
 
 extension UIFontTextStyle {
-    public static func defaultFontMapping(style: UIFontTextStyle, sizeCategory: UIContentSizeCategory) -> UIFont {
+    public static func defaultFontMapping(style: UIFontTextStyle,
+                                          sizeCategory: UIContentSizeCategory = current()) -> UIFont {
         return style.defaultFontMapping(sizeCategory: sizeCategory)
     }
 
     /// The iOS default font for a given size category.
-    public func defaultFontMapping(sizeCategory: UIContentSizeCategory) -> UIFont {
+    public func defaultFontMapping(sizeCategory: UIContentSizeCategory = current()) -> UIFont {
         let pointSize = defaultFontPointSize(sizeCategory: sizeCategory)
 
         switch self {
@@ -140,7 +141,7 @@ extension UIFontTextStyle {
 
 extension UIFontTextStyle {
     /// The iOS defaults for font sizes for a given style and size category.
-    public func defaultFontPointSize(sizeCategory: UIContentSizeCategory) -> CGFloat {
+    public func defaultFontPointSize(sizeCategory: UIContentSizeCategory = current()) -> CGFloat {
         switch (self, sizeCategory) {
         case (UIFontTextStyle.title1, UIContentSizeCategory.extraSmall):                        return 25
         case (UIFontTextStyle.title1, UIContentSizeCategory.small):                             return 26
@@ -276,4 +277,8 @@ extension UIFontTextStyle {
             return UIFontDescriptor.preferredFontDescriptor(withTextStyle: self).pointSize
         }
     }
+}
+
+func current() -> UIContentSizeCategory {
+    return UIApplication.shared.preferredContentSizeCategory
 }
