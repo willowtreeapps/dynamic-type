@@ -17,7 +17,7 @@ public final class FontMap<Style: Hashable> {
         self.creator = creator
     }
 
-    public func font(style: Style, sizeCategory: UIContentSizeCategory = current()) -> UIFont {
+    public func font(style: Style, sizeCategory: UIContentSizeCategory = currentSize()) -> UIFont {
         if let font = cache[style]?[sizeCategory] {
             return font
         }
@@ -49,11 +49,21 @@ extension UIViewController {
     }
 
     func dynamicType_viewDidLoad() {
-        self.dynamicType_viewDidLoad()
+        dynamicType_viewDidLoad()
+        dynamicType_initializeFonts()
         NotificationCenter.default.addObserver(self,
                                                selector: .updateFonts,
                                                name: .UIContentSizeCategoryDidChange,
                                                object: nil)
+
+    }
+
+    func dynamicType_initializeFonts() {
+        guard let responder = self as? RespondsToDynamicFont else {
+            return
+        }
+
+        responder.updateFonts(preferredContentSize: currentSize())
     }
 
     func dynamicType_updateFonts(notification: Notification) {
@@ -70,10 +80,12 @@ extension UIViewController {
         let originalMethod = class_getInstanceMethod(self, original)
         let swizzledMethod = class_getInstanceMethod(self, swizzled)
 
-        let didAddMethod = class_addMethod(self, original, method_getImplementation(swizzledMethod), method_getTypeEncoding(swizzledMethod))
+        let didAddMethod = class_addMethod(self, original, method_getImplementation(swizzledMethod),
+                                           method_getTypeEncoding(swizzledMethod))
 
         if didAddMethod {
-            class_replaceMethod(self, swizzled, method_getImplementation(originalMethod), method_getTypeEncoding(originalMethod))
+            class_replaceMethod(self, swizzled, method_getImplementation(originalMethod),
+                                method_getTypeEncoding(originalMethod))
         } else {
             method_exchangeImplementations(originalMethod, swizzledMethod)
         }
@@ -122,12 +134,12 @@ extension UIContentSizeCategory: CustomStringConvertible {
 
 extension UIFontTextStyle {
     public static func defaultFontMapping(style: UIFontTextStyle,
-                                          sizeCategory: UIContentSizeCategory = current()) -> UIFont {
+                                          sizeCategory: UIContentSizeCategory = currentSize()) -> UIFont {
         return style.defaultFontMapping(sizeCategory: sizeCategory)
     }
 
     /// The iOS default font for a given size category.
-    public func defaultFontMapping(sizeCategory: UIContentSizeCategory = current()) -> UIFont {
+    public func defaultFontMapping(sizeCategory: UIContentSizeCategory = currentSize()) -> UIFont {
         let pointSize = defaultFontPointSize(sizeCategory: sizeCategory)
 
         switch self {
@@ -141,7 +153,7 @@ extension UIFontTextStyle {
 
 extension UIFontTextStyle {
     /// The iOS defaults for font sizes for a given style and size category.
-    public func defaultFontPointSize(sizeCategory: UIContentSizeCategory = current()) -> CGFloat {
+    public func defaultFontPointSize(sizeCategory: UIContentSizeCategory = currentSize()) -> CGFloat {
         switch (self, sizeCategory) {
         case (UIFontTextStyle.title1, UIContentSizeCategory.extraSmall):                        return 25
         case (UIFontTextStyle.title1, UIContentSizeCategory.small):                             return 26
@@ -279,6 +291,6 @@ extension UIFontTextStyle {
     }
 }
 
-func current() -> UIContentSizeCategory {
+func currentSize() -> UIContentSizeCategory {
     return UIApplication.shared.preferredContentSizeCategory
 }
