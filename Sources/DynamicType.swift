@@ -152,8 +152,9 @@ extension UIFontTextStyle {
 }
 
 extension UIFontTextStyle {
-    /// The iOS defaults for font sizes for a given style and size category.
+    /// The defaults for font sizes for a given style and size category.
     public func defaultFontPointSize(sizeCategory: UIContentSizeCategory = currentSize()) -> CGFloat {
+        #if os(iOS)
         switch (self, sizeCategory) {
         case (UIFontTextStyle.title1, UIContentSizeCategory.extraSmall):                        return 25
         case (UIFontTextStyle.title1, UIContentSizeCategory.small):                             return 26
@@ -288,6 +289,22 @@ extension UIFontTextStyle {
         default:
             return UIFontDescriptor.preferredFontDescriptor(withTextStyle: self).pointSize
         }
+        #elseif os(tvOS)
+        switch self {
+        case UIFontTextStyle.title1:      return 76
+        case UIFontTextStyle.title2:      return 57
+        case UIFontTextStyle.title3:      return 48
+        case UIFontTextStyle.headline:    return 38
+        case UIFontTextStyle.subheadline: return 31
+        case UIFontTextStyle.body:        return 29
+        case UIFontTextStyle.callout:     return 29
+        case UIFontTextStyle.footnote:    return 29
+        case UIFontTextStyle.caption1:    return 25
+        case UIFontTextStyle.caption2:    return 23
+        default:
+            return UIFontDescriptor.preferredFontDescriptor(withTextStyle: self).pointSize
+        }
+        #endif
     }
 }
 
