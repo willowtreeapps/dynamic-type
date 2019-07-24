@@ -41,11 +41,11 @@ class FontMapTests: XCTestCase {
 }
 
 class DefaultFontMapTests: XCTestCase {
-    let map = UIFontTextStyle.defaultFontMap
+    let map = UIFont.TextStyle.defaultFontMap
 
     func testBody() {
         let font = map.font(style: .body, sizeCategory: .accessibilityExtraExtraLarge)
-        let pointSize = UIFontTextStyle.body.defaultFontPointSize(sizeCategory: .accessibilityExtraExtraLarge)
+        let pointSize = UIFont.TextStyle.body.defaultFontPointSize(sizeCategory: .accessibilityExtraExtraLarge)
         XCTAssertEqual(pointSize, font.pointSize)
 
         let defaultfont = UIFont.systemFont(ofSize: pointSize)
@@ -54,7 +54,7 @@ class DefaultFontMapTests: XCTestCase {
 
     func testBoldHeadline() {
         let font = map.font(style: .headline, sizeCategory: .medium)
-        let pointSize = UIFontTextStyle.headline.defaultFontPointSize(sizeCategory: .medium)
+        let pointSize = UIFont.TextStyle.headline.defaultFontPointSize(sizeCategory: .medium)
         XCTAssertEqual(pointSize, font.pointSize)
 
         let defaultfont = UIFont.boldSystemFont(ofSize: pointSize)
@@ -76,9 +76,9 @@ class SwizzleTests: XCTestCase {
 
     func testNotification() {
         func notification(_ size: UIContentSizeCategory) -> Notification {
-            return Notification(name: .UIContentSizeCategoryDidChange,
+            return Notification(name: UIContentSizeCategory.didChangeNotification,
                                 object: nil,
-                                userInfo: [UIContentSizeCategoryNewValueKey: size])
+                                userInfo: [UIContentSizeCategory.newValueUserInfoKey: size])
         }
 
         let vc = MyViewController()

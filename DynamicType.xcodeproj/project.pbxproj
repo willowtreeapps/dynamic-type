@@ -247,12 +247,13 @@
 					D98FB1321D5CC96C00E9FE79 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7UMFPW78PV;
-						LastSwiftMigration = 0800;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					D98FB13B1D5CC96C00E9FE79 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 7UMFPW78PV;
+						LastSwiftMigration = 1010;
 						ProvisioningStyle = Automatic;
 					};
 					D98FB1541D5CEE3200E9FE79 = {
@@ -484,7 +485,8 @@
 				PRODUCT_NAME = DynamicType;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -505,7 +507,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.DynamicType;
 				PRODUCT_NAME = DynamicType;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -517,7 +520,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.DynamicTypeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -529,7 +533,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.DynamicTypeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
@@ -549,7 +554,7 @@
 				PRODUCT_NAME = DynamicType;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
@@ -571,7 +576,7 @@
 				PRODUCT_NAME = DynamicType;
 				SDKROOT = appletvos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = 3;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
@@ -586,7 +591,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.DynamicTypeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Debug;
@@ -600,7 +605,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.willowtreeapps.DynamicTypeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = appletvos;
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.2;
 				TVOS_DEPLOYMENT_TARGET = 10.0;
 			};
 			name = Release;
@@ -642,6 +647,7 @@
 				D98FB1681D5CEE3200E9FE79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D98FB1691D5CEE3200E9FE79 /* Build configuration list for PBXNativeTarget "DynamicTypeTests (tvOS)" */ = {
 			isa = XCConfigurationList;
@@ -650,6 +656,7 @@
 				D98FB16B1D5CEE3200E9FE79 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
